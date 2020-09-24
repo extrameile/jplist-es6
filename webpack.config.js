@@ -34,7 +34,22 @@ const config = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015']
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                    "corejs": { "version":2 },
+                                    "useBuiltIns": "usage",
+                                    "targets": {
+                                        "edge": "17",
+                                        "firefox": "60",
+                                        "chrome": "67",
+                                        "safari": "11.1",
+                                        "ie": "11"
+                                    }
+                                }
+                            ]
+                        ]
                     }
                 }
             },
